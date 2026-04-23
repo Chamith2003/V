@@ -2,11 +2,12 @@
 $host='localhost';
 $dbname='demo';
 $user='root';
-$pass='004047';
+$pass='';
 
-$conn=new mysqli($host, $user, $pass, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error."<br>");
+try {
+    $conn=new mysqli($host, $user, $pass, $dbname);
+} catch (mysqli_sql_exception $e) {
+    die("Connection failed: " . $e->getMessage() . "<br>");
 }
 
 // $conn->set_charset("utf8mb4"); 
