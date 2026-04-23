@@ -260,6 +260,6 @@ $registeredEventIds = array_column($registeredLocations, 'name');
         }
     </script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJSU1xHdWQ06eflLu6dIWvs46kj0v9gfI&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=APIKEY&callback=initMap" async defer></script>
 </body>
 </html>
