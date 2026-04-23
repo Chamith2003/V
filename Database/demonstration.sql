@@ -36,7 +36,7 @@ DROP TABLE IF EXISTS `admin`;
 CREATE TABLE IF NOT EXISTS `admin` (
   `userid` int NOT NULL,
   PRIMARY KEY (`userid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `admin`
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `announcement` (
   `is_urgent` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`announcement_id`),
   KEY `event_id` (`event_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `announcement`
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `annual_event_approvals` (
   PRIMARY KEY (`approval_id`),
   UNIQUE KEY `unique_approval` (`event_id`,`approver_id`),
   KEY `approver_id` (`approver_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `annual_event_approvals`
@@ -141,7 +141,7 @@ CREATE TABLE IF NOT EXISTS `attendance_rating` (
   UNIQUE KEY `unique_event_volunteer` (`event_id`,`volunteer_id`),
   KEY `volunteer_id` (`volunteer_id`),
   KEY `rater_id` (`rater_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=250 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=250 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `attendance_rating`
@@ -923,7 +923,7 @@ CREATE TABLE IF NOT EXISTS `item` (
   `image_path` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`itemid`),
   KEY `managinguserid` (`managinguserid`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `item`
@@ -961,7 +961,7 @@ CREATE TABLE IF NOT EXISTS `item_purchase_log` (
   KEY `volunteer_id` (`volunteer_id`),
   KEY `itemid` (`itemid`),
   KEY `sponsorid` (`sponsorid`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `item_purchase_log`
@@ -990,7 +990,7 @@ DROP TABLE IF EXISTS `manager`;
 CREATE TABLE IF NOT EXISTS `manager` (
   `userid` int NOT NULL,
   PRIMARY KEY (`userid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `manager`
@@ -1815,7 +1815,7 @@ CREATE TABLE IF NOT EXISTS `route_permissions` (
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`permission_id`),
   UNIQUE KEY `module` (`module`,`action`)
-) ENGINE=MyISAM AUTO_INCREMENT=137 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=137 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `route_permissions`
@@ -1979,7 +1979,7 @@ CREATE TABLE IF NOT EXISTS `sponsor` (
   `contact_person_contact_number` varchar(20) DEFAULT NULL,
   `logo_path` varchar(255) DEFAULT '/V/View/userdash/settings/img/profile1.png',
   PRIMARY KEY (`userid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `sponsor`
@@ -2006,7 +2006,7 @@ CREATE TABLE IF NOT EXISTS `sponsorship_request` (
   PRIMARY KEY (`request_id`),
   KEY `event_id` (`event_id`),
   KEY `sponsorid` (`sponsorid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -2138,7 +2138,7 @@ CREATE TABLE IF NOT EXISTS `task_assignment` (
   `assignment_date` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`task_id`,`volunteer_id`),
   KEY `volunteer_id` (`volunteer_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `task_assignment`
@@ -2390,7 +2390,7 @@ CREATE TABLE IF NOT EXISTS `task_performance_rating` (
   UNIQUE KEY `task_id` (`task_id`,`volunteer_id`,`rater_id`),
   KEY `volunteer_id` (`volunteer_id`),
   KEY `rater_id` (`rater_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=180 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=180 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `task_performance_rating`
@@ -2870,7 +2870,7 @@ CREATE TABLE IF NOT EXISTS `volunteer_availability` (
   `userid` int NOT NULL,
   `availability` varchar(100) NOT NULL,
   PRIMARY KEY (`userid`,`availability`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `volunteer_availability`
@@ -3158,7 +3158,7 @@ CREATE TABLE IF NOT EXISTS `volunteer_badge` (
   `earneddate` date DEFAULT (curdate()),
   PRIMARY KEY (`badge_id`),
   KEY `userid` (`userid`)
-) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `volunteer_badge`
@@ -3179,7 +3179,7 @@ CREATE TABLE IF NOT EXISTS `volunteer_disability` (
   `userid` int NOT NULL,
   `disability` varchar(100) NOT NULL,
   PRIMARY KEY (`userid`,`disability`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -3200,7 +3200,7 @@ CREATE TABLE IF NOT EXISTS `volunteer_leave_history` (
   PRIMARY KEY (`leave_id`),
   KEY `volunteer_id` (`volunteer_id`),
   KEY `event_id` (`event_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `volunteer_leave_history`
@@ -3229,7 +3229,7 @@ CREATE TABLE IF NOT EXISTS `volunteer_skill` (
   `userid` int NOT NULL,
   `skill` varchar(100) NOT NULL,
   PRIMARY KEY (`userid`,`skill`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `volunteer_skill`
