@@ -1,0 +1,485 @@
+/*FINALIZED NAVBAR*/
+
+
+* {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+.logo{
+    max-height: 70px;
+}
+
+.logo img {
+    height: 70px;
+    padding-right: 30px;
+
+}
+
+.navBar {
+    position: fixed;
+    box-sizing: border-box;
+    z-index: 3;
+    background-color: #172941;
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 70px;
+    justify-content: flex-start;
+    font-family: 'Roboto';
+    font-size: 20px;
+    box-shadow: 0px 1px 20px -1px rgba(0, 0, 0, 0.8);
+    padding: 0 30px;
+
+}
+
+.navLeft {
+    display: flex;
+    align-items: center;
+    max-height: 70px;
+    flex: 1;
+    min-width: 0;
+    padding-right: 10px;
+}
+
+.navTabSet {
+    box-sizing: border-box;
+    background-color: #172941;
+    display: flex;
+    width: 1000px;
+    height: 70px;
+    align-items: center;
+    /* centers text vertically */
+    gap: 20px;
+    /*add a gap of 20px between each child*/
+    overflow-x: auto;
+    flex: 1;              /* take remaining space */
+    min-width: 0;        /* prevents cut-off */
+}
+
+.navTabSet::-webkit-scrollbar {
+    display: none;
+}
+
+.navTab {
+    padding: 5px 30px;
+    /*top/bottom and left/right padding*/
+    color: #ffffff;
+    /*text color*/
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+
+}
+
+.navTab:hover {
+    color: #65AC9F;
+
+
+}
+
+.userSection {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.notifications {
+    position: relative;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.notifications:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.userProfile {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #65AC9F, #4a9085);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.userProfile:hover {
+    transform: scale(1.1);
+}
+a {
+    /* color: white;          */
+    text-decoration: none;
+}
+
+.signInBtn {
+    padding: 8px 25px;
+    color: #ffffff;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: 'Roboto';
+    font-size: 16px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signInBtn:hover {
+
+    color: #172941;
+    transform: translateY(-2px);
+    background-color: #ffffff;
+
+}
+.nameStuff{
+    padding: 2px 14px 2px 5px;
+    gap: 7px;
+    color: #ffffff;
+    background-color: transparent;
+    border: 1px solid #65AC9F;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: 'Roboto';
+    font-size: 16px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nameStuff:hover {
+    background-color: transparent;
+    color: #65AC9F;
+    border-color: #65AC9F;
+    transform: scale(1.05);
+
+}
+
+.registerBtn {
+    padding: 8px 25px;
+    color: #ffffff;
+    background-color: #65AC9F;
+    border: 2px solid #65AC9F;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: 'Roboto';
+    font-size: 16px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.registerBtn:hover {
+    background-color: transparent;
+    color: #65AC9F;
+    border-color: #65AC9F;
+    transform: translateY(-2px);
+
+}
+
+.loginButtons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto
+}
+
+
+
+
+
+
+
+
+
+.userMenu {
+    position: relative;
+    /* able to position dropdown relative to this */
+    display: flex;
+    align-items: center;
+}
+
+.userIcon {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+/* .UserIcon:hover{
+    transform: scale(1.05);
+} */
+
+.userIcon.hidden {
+    /*hide the userIcon when the side bar pops open */
+    display: none;
+}
+
+/* 
+.userIcon:hover {
+    transform: scale(1.1);
+} */
+
+.userIcon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 
+.userDropdown {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    min-width: 100px;
+    opacity: 0;
+    visibility: hidden;//keep it hidden at first
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.userMenu:hover .userDropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);//slide down smoothly
+} */
+
+/* .userDropdown a {
+    display: block;
+    border-radius: 10px;
+    padding: 12px 16px;
+    color: #172941;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.userDropdown a:hover {
+    background-color: #ffffff;
+    color: #65AC9F;
+} */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 350px;
+    height: 100vh;
+     background: linear-gradient(135deg, rgba(23, 41, 65, 0.95), rgba(44, 62, 80, 0.85), rgba(255, 255, 255, 0.1));
+    /* 80% opacity */
+    /* background: linear-gradient(135deg, rgba(44, 62, 80, 0.8), rgba(52, 73, 94, 0.6)); */
+    /* background-color: rgba(44, 62, 80, 0.8); Dark blue-grey with transparency */
+    backdrop-filter: blur(4px);
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.sidebar.active {
+    right: 0;
+    /*slides out*/
+
+}
+
+.sidebarHeader {
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    background: #172941;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+}
+
+.sidebarUserIcon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.sidebarUserIcon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sidebarUserInfo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebarUserName--navbar {
+    font-weight: lighter;
+    color: #ffffff;
+    font-size: 16px;
+    max-width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.sidebarUserName--sidebar {
+    font-weight: lighter;
+    color: #ffffff;
+    font-size: 16px;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.marqueeText {
+    display: inline-block;
+}
+
+.sidebarUserName--navbar:hover .marqueeText {
+    animation: marquee 5s linear infinite;
+}
+.sidebarUserName--sidebar:hover .marqueeText {
+    animation: marquee 5s linear infinite;
+}
+@keyframes marquee {
+    0%   { transform: translateX(0%); }
+    10%  { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+}
+.sidebarUserRole {
+    color: #65AC9F;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
+.sidebarClose {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #999;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.sidebarClose:hover {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.sidebarContent {
+    padding: 20px;
+}
+
+.sidebarContent a {
+    display: block;
+    padding: 12px 16px;
+    color: #f2f8f5;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+}
+
+.sidebarContent a:hover {
+    background-color: #f8f9fa;
+    color: #65AC9F;
+}
+
+.sidebarSection {
+    margin: 20px 0;
+}
+
+.sidebarSection h3 {
+    color: #7f8c8d;
+    font-size: 20px;
+    margin-bottom: 10px;
+    padding-left: 16px;
+    font-weight: lighter;
+    border-left: 3px solid #65AC9F;
+}
+
+.logoutBtn {
+    margin-top: 20px !important;
+    width: 95%;
+    place-self: center;
+    background-color: #d32f2f   !important;
+    color: white !important;
+    text-align: center;
+}
+
+.logoutBtn:hover {
+    background-color:  #b71c1c  !important;
+    /*appear on top using important eventhough it is less specific*/
+    color: white !important;
+}
+
+.notifiBellContainer{
+    position: relative;
+    }
+
+    .notifBell{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;}
+
+    .notifBell:hover{
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);}
+
+
+     .notifBell img{
+        width: 26px;
+        height: 26px;
+        filter: brightness(0) invert(1);
+     }
+
+     .notifDot{
+    position: absolute;
+    top:0px;
+    right: -3px;
+    width: 13px;
+    height: 13px;
+    background-color: #65ac9f;
+    border-radius: 50%;
+    border: 0px solid #172941;
+    display: none;
+    animation: pulse 2s infinite;
+     }
+
+     .notifDot.active{
+        display: block;
+     }

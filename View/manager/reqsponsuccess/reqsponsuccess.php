@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V</title>
+    <!-- <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #ecf0f1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            background-color: #2C3E50;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #2C3E50;
+            font-size: 24px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: opacity 0.3s;
+        }
+
+        .nav-link:hover {
+            opacity: 0.8;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-signin {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-register {
+            background: #6db5a4;
+            color: white;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-signin:hover {
+            background: white;
+            color: #2C3E50;
+        }
+
+        .btn-register:hover {
+            background: #5a9988;
+        }
+
+        /* Main Content */
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .icon-wrapper {
+            background: #6db5a4;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            animation: scaleIn 0.5s ease-out;
+        }
+
+        .checkmark {
+            width: 60px;
+            height: 60px;
+            border: 4px solid white;
+            border-radius: 50%;
+            position: relative;
+            animation: checkmark 0.6s ease-in-out 0.3s both;
+        }
+
+        .checkmark::after {
+            content: '';
+            position: absolute;
+            left: 18px;
+            top: 8px;
+            width: 15px;
+            height: 30px;
+            border: solid white;
+            border-width: 0 4px 4px 0;
+            transform: rotate(45deg);
+            animation: checkmarkDraw 0.3s ease-in-out 0.5s both;
+        }
+
+        .success-card {
+            background: linear-gradient(145deg, #34495e 0%, #2C3E50 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.6s ease-out;
+        }
+
+        .success-title {
+            color: white;
+            font-size: 32px;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .success-message {
+            color: #b8c5d0;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .details-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            color: #b8c5d0;
+            font-size: 14px;
+        }
+
+        .detail-value {
+            color: white;
+            font-weight: 500;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: #6db5a4;
+            color: white;
+            border: none;
+            padding: 0.875rem 2rem;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        
+
+        .btn-primary:hover {
+            background: #5a9988;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(109, 181, 164, 0.4);
+        }
+
+        
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes checkmark {
+            0% {
+                transform: scale(0);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes checkmarkDraw {
+            from {
+                height: 0;
+            }
+            to {
+                height: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .success-card {
+                padding: 2rem;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .nav {
+                display: none;
+            }
+        }
+    </style> -->
+    <link rel="stylesheet" type="text/css" href="/V/View/manager/reqsponsuccess/reqsponsuccess.css">
+         <?php include __DIR__ . '/../../navbar/navbar.php'; ?>
+</head>
+<body>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <div class="icon-wrapper">
+            <div class="checkmark"></div>
+        </div>
+
+        <div class="success-card">
+            <h1 class="success-title">Request Sent Successfully!</h1>
+            <p class="success-message">
+                Your sponsorship request has been submitted to the sponsor.
+                They will review your request and respond shortly.
+            </p>
+
+            <div class="details-card">
+                
+                <div class="detail-row">
+                    <span class="detail-label">Submission Date</span>
+                    <span class="detail-value">October 23, 2025</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Status</span>
+                    <span class="detail-value">Pending Review</span>
+                </div>
+            </div>
+
+            <p class="success-message">
+                 You will be notified immediately when they respond to your sponsorship request.
+            </p>
+
+            <div class="action-buttons">
+                <button class="btn-primary" onclick="window.location.href='/V/router.php?module=page&action=homepage'">Back to Home</button>
+                
+        </div>
+    </div>
+</body>
+</html>

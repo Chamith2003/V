@@ -1,0 +1,556 @@
+ * {
+     padding: 0;
+     border: 0;
+     margin: 0;
+     box-sizing: border-box;
+ }
+
+ body {
+     font-family: 'Roboto', sans-serif;
+     /* background: #ecf0f1; */
+     min-height: 100vh;
+     background-image: url('/V/View/resources/bg.png');
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-attachment: fixed;
+ }
+
+ /* Main Content */
+ .mainContent {
+     padding: 90px 30px;
+     /* background: #ecf0f1; */
+     background: transparent;
+
+ }
+
+ .dashboardHeader {
+     margin-bottom: 30px;
+     text-align: center;
+ }
+
+ .dashboardTitle {
+     font-size: 2.5rem;
+     font-weight: 700;
+     color: #2c3e50;
+     margin-bottom: 10px;
+ }
+
+ .dashboardSubtitle {
+     font-size: 1.1rem;
+     color: #ffffff;
+     font-weight: 300;
+     margin-bottom: 20px;
+ }
+
+ .eventInfo {
+     display: inline-flex;
+     align-items: center;
+     gap: 10px;
+     background: linear-gradient(135deg, #65AC9F, #4a9085);
+     color: white;
+     padding: 8px 20px;
+     border-radius: 25px;
+     font-weight: 500;
+ }
+
+ .dashboardLayout {
+     display: grid;
+     grid-template-columns: 1fr;
+     gap: 30px;
+     max-width: 1200px;
+     margin: 0 auto;
+ }
+
+ /* Progress Section */
+ .progressSection {
+     background: linear-gradient(135deg, #2C3E50, #34495e);
+     border-radius: 15px;
+     padding: 25px;
+     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+     color: white;
+ }
+
+ .progressHeader {
+     text-align: center;
+     margin-bottom: 25px;
+ }
+
+ .progressTitle {
+     font-size: 1.5rem;
+     font-weight: 700;
+     margin-bottom: 10px;
+ }
+
+ .progressStats {
+     display: flex;
+     justify-content: center;
+     gap: 30px;
+     margin-bottom: 20px;
+ }
+
+ .statItem {
+     text-align: center;
+ }
+
+ .statNumber {
+     font-size: 2rem;
+     font-weight: 700;
+     color: #65AC9F;
+ }
+
+ .statLabel {
+     font-size: 0.9rem;
+     opacity: 0.8;
+ }
+
+ .progressBar {
+     background: rgba(255, 255, 255, 0.1);
+     border-radius: 10px;
+     height: 12px;
+     overflow: hidden;
+     margin-bottom: 10px;
+ }
+
+ .progressFill {
+     height: 100%;
+     background: linear-gradient(90deg, #65AC9F, #4a9085);
+     border-radius: 10px;
+     transition: width 0.5s ease;
+     animation: progressPulse 2s infinite;
+ }
+
+ @keyframes progressPulse {
+
+     0%,
+     100% {
+         opacity: 1;
+     }
+
+     50% {
+         opacity: 0.8;
+     }
+ }
+
+ .progressText {
+     text-align: center;
+     font-size: 0.9rem;
+     opacity: 0.9;
+ }
+
+ /* Rating Section */
+ .ratingSection {
+     background: linear-gradient(135deg, #2C3E50, #34495e);
+     border-radius: 15px;
+     padding: 25px;
+     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+ }
+
+ .sectionHeader {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin-bottom: 25px;
+     padding-bottom: 15px;
+     border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+ }
+
+ .sectionHeading {
+     font-size: 1.5rem;
+     font-weight: 700;
+     color: #ffffff;
+ }
+
+ .remainingCount {
+     background: rgba(101, 172, 159, 0.2);
+     color: #65AC9F;
+     padding: 6px 15px;
+     border-radius: 20px;
+     font-size: 0.9rem;
+     font-weight: 600;
+ }
+
+ /* Volunteer Rating Cards */
+ .volunteerGrid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+     gap: 20px;
+ }
+
+ .volunteerRatingCard {
+     background: #f8f9fa;
+     border-radius: 15px;
+     padding: 25px;
+     transition: all 0.3s ease;
+     border: 2px solid transparent;
+     position: relative;
+     overflow: hidden;
+ }
+
+ .volunteerRatingCard:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+     border-color: rgba(101, 172, 159, 0.3);
+ }
+
+ .volunteerRatingCard.completed {
+     /* background: linear-gradient(135deg, rgba(39, 174, 96, 0.05), rgba(46, 204, 113, 0.05));
+     border-color: #27ae60; */
+     /* background: linear-gradient(135deg, #d4edda 0%, #f8f9fa 100%);
+    border-color: #28a745; */
+     /* background: #e8f5e9;
+border-color: #28a745; */
+     /* background: linear-gradient(135deg, #d1f2eb 0%, #f0f8f7 100%);
+border-color: #65ac9f; */
+     background: #d1f2eb;
+     border-color: #65ac9f;
+ }
+
+ .volunteerRatingCard.completed::before {
+     content: '✓';
+     position: absolute;
+     top: 15px;
+     right: 15px;
+     background: #27ae60;
+     color: white;
+     width: 30px;
+     height: 30px;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-weight: 700;
+     font-size: 1.1rem;
+ }
+
+ .volunteerHeader {
+     display: flex;
+     align-items: center;
+     gap: 15px;
+     margin-bottom: 20px;
+ }
+
+ .volunteerAvatar {
+     width: 60px;
+     height: 60px;
+     border-radius: 50%;
+     background: linear-gradient(135deg, #65AC9F, #4a9085);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     color: white;
+     font-weight: 700;
+     font-size: 1.5rem;
+     box-shadow: 0 4px 15px rgba(101, 172, 159, 0.3);
+ }
+
+ .volunteerDetails h3 {
+     font-size: 1.2rem;
+     font-weight: 700;
+     color: #2c3e50;
+     margin-bottom: 5px;
+ }
+
+ .volunteerDetails p {
+     color: #7f8c8d;
+     font-size: 0.9rem;
+ }
+
+ .volunteerTasks {
+     background: white;
+     border-radius: 8px;
+     padding: 12px;
+     margin-bottom: 20px;
+     border-left: 4px solid #65AC9F;
+ }
+
+ .tasksTitle {
+     font-size: 0.9rem;
+     font-weight: 600;
+     color: #2c3e50;
+     margin-bottom: 8px;
+ }
+
+ .tasksList {
+     font-size: 0.85rem;
+     color: #7f8c8d;
+     line-height: 1.4;
+ }
+
+ /* Rating Controls */
+ .ratingControls {
+     margin-bottom: 20px;
+ }
+
+ .ratingLabel {
+     font-size: 1rem;
+     font-weight: 600;
+     color: #2c3e50;
+     margin-bottom: 15px;
+     display: block;
+ }
+
+ .starRating {
+     display: flex;
+     gap: 8px;
+     margin-bottom: 15px;
+ }
+
+ .star {
+     width: 35px;
+     height: 35px;
+     cursor: pointer;
+     transition: all 0.2s ease;
+     font-size: 1.8rem;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     color: #bdc3c7;
+     user-select: none;
+ }
+
+ .star:hover,
+ .star.active {
+     color: #f39c12;
+     transform: scale(1.1);
+ }
+
+ .star:hover~.star {
+     color: #bdc3c7;
+ }
+
+ .ratingText {
+     font-size: 0.9rem;
+     color: #7f8c8d;
+     font-weight: 500;
+     min-height: 20px;
+ }
+
+ .commentSection {
+     margin-top: 15px;
+ }
+
+ .commentLabel {
+     font-size: 0.9rem;
+     font-weight: 600;
+     color: #2c3e50;
+     margin-bottom: 8px;
+     display: block;
+ }
+
+ .commentInput {
+     width: 100%;
+     min-height: 80px;
+     padding: 12px;
+     border: 2px solid #ecf0f1;
+     border-radius: 8px;
+     font-family: 'Roboto', sans-serif;
+     font-size: 0.9rem;
+     resize: vertical;
+     transition: border-color 0.3s ease;
+ }
+
+ .commentInput:focus {
+     outline: none;
+     border-color: #65AC9F;
+ }
+
+ .submitRating {
+     background: linear-gradient(135deg, #65AC9F, #4a9085);
+     color: white;
+     padding: 10px 25px;
+     border: none;
+     border-radius: 8px;
+     font-weight: 600;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     width: 100%;
+ }
+
+ .submitRating:hover {
+     transform: translateY(-2px);
+     box-shadow: 0 5px 15px rgba(101, 172, 159, 0.3);
+ }
+
+ .submitRating:disabled {
+     background: #bdc3c7;
+     cursor: not-allowed;
+     transform: none;
+     box-shadow: none;
+ }
+
+ /* Completion Section */
+ .completionSection {
+     /* background: linear-gradient(135deg, #27ae60, #2ecc71); */
+     background: linear-gradient(135deg, #2C3E50, #34495e);
+
+     border-radius: 15px;
+     padding: 30px;
+     text-align: center;
+     color: white;
+     display: none;
+ }
+
+ .completionSection.show {
+     display: block;
+     animation: fadeInUp 0.5s ease;
+ }
+
+
+
+ /* No Peers Section */
+ .noPeersSection {
+     /* background: linear-gradient(135deg, #27ae60, #2ecc71); */
+     background: linear-gradient(135deg, #2C3E50, #34495e);
+
+     border-radius: 15px;
+     padding: 30px;
+     text-align: center;
+     color: white;
+     display: none;
+ }
+
+ .noPeersSection.show {
+     display: block;
+     animation: fadeInUp 0.5s ease;
+ }
+
+ @keyframes fadeInUp {
+     from {
+         opacity: 0;
+         transform: translateY(20px);
+     }
+
+     to {
+         opacity: 1;
+         transform: translateY(0);
+     }
+ }
+
+ /* .completionIcon {
+     font-size: 4rem;
+     margin-bottom: 20px;
+ } */
+
+ .completionTitle {
+     font-size: 2rem;
+     font-weight: 700;
+     margin-bottom: 15px;
+ }
+
+ .noPeersTitle {
+     font-size: 2rem;
+     font-weight: 700;
+     margin-bottom: 15px;
+ }
+
+ .completionMessage {
+     font-size: 1.1rem;
+     opacity: 0.9;
+     margin-bottom: 25px;
+ }
+  .noPeersMessage {
+     font-size: 1.5rem;
+     opacity: 0.9;
+     margin-bottom: 25px;
+ }
+
+ /* .viewResultsBtn {
+     background: rgba(255, 255, 255, 0.2);
+     color: white;
+     padding: 12px 30px;
+     border: 2px solid rgba(255, 255, 255, 0.3);
+     border-radius: 8px;
+     font-weight: 600;
+     cursor: pointer;
+     transition: all 0.3s ease;
+ }
+
+ .viewResultsBtn:hover {
+     background: rgba(255, 255, 255, 0.3);
+     border-color: rgba(255, 255, 255, 0.5);
+ } */
+
+ /* Responsive Design */
+ @media (max-width: 768px) {
+     .dashboardTitle {
+         font-size: 2rem;
+     }
+
+     .volunteerGrid {
+         grid-template-columns: 1fr;
+     }
+
+     .progressStats {
+         flex-direction: column;
+         gap: 15px;
+     }
+
+     .mainContent {
+         padding: 60px 15px;
+     }
+ }
+
+ /* Animation for cards */
+ .volunteerRatingCard {
+     animation: slideInUp 0.5s ease forwards;
+     opacity: 0;
+ }
+
+ /* .volunteerRatingCard:nth-child(1) {
+     animation-delay: 0.1s;
+ }
+
+ .volunteerRatingCard:nth-child(2) {
+     animation-delay: 0.2s;
+ }
+
+ .volunteerRatingCard:nth-child(3) {
+     animation-delay: 0.3s;
+ }
+
+ .volunteerRatingCard:nth-child(4) {
+     animation-delay: 0.4s;
+ } */
+
+ @keyframes slideInUp {
+     from {
+         opacity: 0;
+         transform: translateY(30px);
+     }
+
+     to {
+         opacity: 1;
+         transform: translateY(0);
+     }
+ }
+
+
+ .backbuttoncontainer{
+    display:flex;
+    justify-content: center;
+    width:100%;
+    padding:0 20px;
+}
+
+.backbuttoncontainer a {
+    width: 80%;       
+    max-width: 600px;
+}
+
+ .backbutton {
+    display: block;
+    width:100%;
+    padding: 10px 40px;
+    background: linear-gradient(45deg, #65AC9F, #4a9085);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight:100;
+    text-align: center; 
+}
+
+.backbutton:hover {
+    transform:scale(1.02);
+    background: linear-gradient(45deg, #4a9085, #65AC9F);
+}

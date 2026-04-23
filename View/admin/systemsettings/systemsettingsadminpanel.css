@@ -1,0 +1,478 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url('/V/View/resources/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.adminSettingsContainer {
+    width: 100%;
+    min-height: 100vh;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+}
+
+.adminSettingsHeader {
+    background-color: #2c3e50;
+    color: white;
+    padding: 30px 40px;
+    border-radius: 15px;
+    margin-top: 7rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+.adminSettingsHeader h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.adminSettingsHeader p {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.lowerContainer {
+    margin: 0 auto;
+    padding: 4rem;
+    background-color: #2c3e50;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    width: 90%;
+}
+
+.lowerInnerContainer {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.innerContent {
+    padding: 30px;
+}
+
+.innerContent.active {
+    display: block;
+}
+
+.settingsSection {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border-left: 4px solid #172941;
+    max-height: 548px;
+    overflow-y: auto;
+}
+
+.sectionTitle {
+    font-size: 20px;
+    font-weight: 700;
+    color: #172941;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sectionHeader p {
+    color: #666;
+    font-size: 14px;
+}
+
+
+/* .addHighlightButton {
+    background: #10b981;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+
+.addHighlightButton:hover {
+    background: #059669;
+    transform: translateY(-2px);
+} */
+
+
+
+.addHighlightButton {
+    background: #10b981;
+    color: white;
+    font-weight: lighter;
+    padding: 10px 8px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.addHighlightButton:hover {
+    background: #059669;
+    /* font-weight: lighter; */
+}
+
+.addHighlightButton span img {
+    width: 16px;
+    height: 16px;
+}
+
+.highlightsList {
+    display: grid;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalOverlay.active {
+    display: flex;
+}
+
+.modal {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: slideIn 0.3s ease;
+    scrollbar-width: none;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modalHeader {
+    background: linear-gradient(135deg, rgb(101, 172, 159), rgb(74, 144, 133));
+    color: white;
+    padding: 24px;
+    border-radius: 16px 16px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modalTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.closeButton {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    line-height: 1;
+}
+
+.closeButton:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.modalBody {
+    padding: 32px;
+}
+
+.formGroup {
+    margin-bottom: 20px;
+}
+
+.formLabel {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.formInput,
+.formTextarea,
+.formSelect {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.3s;
+    background: white;
+}
+
+.formInput:focus,
+.formTextarea:focus,
+.formSelect:focus {
+    outline: none;
+    border-color: #172941;
+    box-shadow: 0 0 0 3px rgba(23, 41, 65, 0.1);
+}
+
+.formTextarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    
+}
+
+
+.submitButton {
+    background: linear-gradient(135deg, #172941 0%, #2a3f5f 100%);
+    color: white;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(23, 41, 65, 0.3);
+}
+
+.submitButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(23, 41, 65, 0.4);
+}
+
+.cancelButton {
+    background: #6c757d;
+    color: white;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(108, 117, 125, 0.3);
+}
+
+.cancelButton:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+}
+
+.saveButton {
+    background: #172941;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.saveButton:hover {
+     background: #233f63;
+}
+
+
+
+
+
+/*Java Script loaded highlight's CSS*/
+
+
+.highlightCard {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.highlightCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.highlightCardContent {
+    display: grid;
+    grid-template-columns: 120px 1fr auto;
+    gap: 20px;
+    align-items: center;
+}
+
+.highlightImage img {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.noImage {
+    width: 120px;
+    height: 80px;
+    background: #e0e0e0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 12px;
+}
+
+.highlightInfo {
+    flex: 1;
+}
+
+.highlightTitle {
+    font-size: 18px;
+    font-weight: 600;
+    color: #172941;
+    margin-bottom: 8px;
+}
+
+.highlightDescription {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.highlightMeta {
+    display: flex;
+    gap: 15px;
+    font-size: 13px;
+    align-items: center;
+}
+
+.highlightOrder {
+    color: #666;
+}
+
+.highlightStatus {
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.statusActive {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.statusInactive {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.highlightActions {
+    display: flex;
+    gap: 10px;
+}
+
+.editBtn,
+.deleteBtn {
+    padding: 12px 12px;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+}
+
+.editBtn {
+    background: #2c3e50;
+  color: white;
+  border-color: #2c3e50;
+}
+
+.editBtn:hover {
+    background: #445e78;
+  border-color: #445e78;
+}
+
+.deleteBtn {
+   background: white;
+  color: #6c757d;
+  border-color: #ced4da;
+}
+
+.deleteBtn:hover {
+    background: #f8f9fa;
+  border-color: #adb5bd;
+}

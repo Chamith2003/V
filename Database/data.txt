@@ -1,0 +1,85 @@
+volunteer(Nadin Bandara)               - nadinwbandara@gmail.com         - password123
+admin(Administrator)                   - v4volunteering0000@gmail.com    - password123
+manager(Zolo Yu)                       - zolouu56@gmail.com              - password123
+sponsor(Keels Super Market)            - susunoodles22@gmail.com         - password123
+representative(Thivinya Abeyratna)     - mesonfear@gmail.com             - password123
+organisation rep(Chamith Nimsara)      - nadinyear2sem2@gmail.com        - password123
+
+
+Visa Card Number: 4916217501611292
+Keels Address: No. 148, Vauxhall Street, Colombo 02, Sri Lanka
+Daily Mirror Address: No. 8, Hunupitiya Cross Road, Colombo 02, Sri Lanka.
+
+
+
+Dummy Data:
+
+
+
+Org rep:
+sachindra@gmail.com
+
+Representative:
+r54@gmail.com
+r55@gmail.com
+
+
+
+Volunteers(Currently Volunteers):
+v8@gmail.com
+v9@gmail.com
+v10@gmail.com
+v11@gmail.com
+v12@gmail.com
+v13@gmail.com
+v14@gmail.com
+v15@gmail.com
+v16@gmail.com
+v17@gmail.com
+v18@gmail.com
+v19@gmail.com
+v20@gmail.com
+v21@gmail.com
+v22@gmail.com
+v23@gmail.com
+v24@gmail.com
+v25@gmail.com
+v26@gmail.com
+v27@gmail.com
+v28@gmail.com
+v29@gmail.com
+v30@gmail.com
+v31@gmail.com
+v32@gmail.com
+v33@gmail.com
+v34@gmail.com
+v35@gmail.com
+v36@gmail.com
+v37@gmail.com
+v38@gmail.com
+v39@gmail.com
+v40@gmail.com
+v41@gmail.com
+v42@gmail.com
+v43@gmail.com
+v44@gmail.com
+v45@gmail.com
+v46@gmail.com
+v47@gmail.com
+v48@gmail.com
+v49@gmail.com
+v50@gmail.com
+v51@gmail.com
+v52@gmail.com
+r53@gmail.com
+r56@gmail.com
+r57@gmail.com
+r58@gmail.com
+r59@gmail.com
+
+
+Sponsors:
+boc@boc.lk
+1212@slt.com.lk
+kfc@gmail.com
+dailymirror@gmail.com

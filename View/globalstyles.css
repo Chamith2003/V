@@ -1,0 +1,593 @@
+.colors {
+    color: #172941;
+    color: #ffffff;
+    color: #65AC9F;
+    color: linear-gradient(135deg, #65AC9F, #4a9085);
+    color: #2C3E50;
+    color: #D9D9D9;
+    color: #f2f8f5;
+    color: #ecf0f1;
+    color: #7f8c8d;
+    color: #a8d5d1;
+    color: #8bc34a;
+    color: #4caf50;
+    color: #bdc3c7;
+    color: linear-gradient(135deg, #65AC9F, #4a9085);
+    color: linear-gradient(135deg, #2C3E50, #34495e);
+    color: linear-gradient(45deg, #65AC9F, #4a9085);
+    color: linear-gradient(45deg, #4a9085, #65AC9F);
+    color: #1a252f;
+    color: #34495e;
+}
+
+
+* {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+.logo img {
+    height: 70px;
+    padding-right: 30px;
+
+}
+
+.navBar {
+    position: fixed;
+    box-sizing: border-box;
+    z-index: 3;
+    background-color: #172941;
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 70px;
+    justify-content: flex-start;
+    font-family: 'Roboto';
+    font-size: 20px;
+    box-shadow: 0px 1px 20px -1px rgba(0, 0, 0, 0.8);
+    padding: 0 30px;
+
+}
+
+.navLeft {
+    display: flex;
+    align-items: center;
+}
+
+.navTabSet {
+    box-sizing: border-box;
+    background-color: #172941;
+    display: flex;
+    width: 700px;
+    height: 70px;
+    align-items: center;
+    /* centers text vertically */
+    gap: 20px;
+    /*add a gap of 20px between each child*/
+}
+
+.navTab {
+    padding: 5px 30px;
+    /*top/bottom and left/right padding*/
+    color: #ffffff;
+    /*text color*/
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+
+}
+
+.navTab:hover {
+    color: #65AC9F;
+
+
+}
+
+.userSection {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.notifications {
+    position: relative;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.notifications:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.userProfile {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #65AC9F, #4a9085);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.userProfile:hover {
+    transform: scale(1.1);
+}
+
+.homeHeading {
+    font-family: 'Roboto';
+    position: absolute;
+    top: 53%;
+    left: 57%;
+    color: white;
+    font-size: 70px;
+    font-weight: bold;
+}
+
+.homeSubHeading {
+    font-size: 25px;
+    font-weight: lighter;
+    top: 78%;
+    left: 58%;
+}
+
+.homepageBox {
+    font-family: "Roboto";
+    padding-top: 70px;
+    box-sizing: border-box;
+
+    background-color: #2C3E50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    box-shadow: -10px 0px 0px 0px rgba(0, 0, 0, 0.2), 10px 0px 0px 0px rgba(0, 0, 0, 0.2);
+}
+
+
+.homepageBox img {
+    width: 100%;
+    object-fit: cover;
+    transform: scale(1.0);
+
+}
+
+.eventGrid {
+    padding-top: 3%;
+    padding-left: 3%;
+    padding-right: 3%;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    ;
+
+}
+
+.eventCard {
+    background-color: #D9D9D9;
+    border-radius: 10px;
+}
+
+.enrollBox {
+    padding-top: 2%;
+    position: fixed;
+    display: flex;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 55%;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+a {
+    /* color: white;          */
+    text-decoration: none;
+}
+
+/* 
+a:visited {
+  color: white;        
+}  */
+
+
+.signInBtn {
+    padding: 8px 25px;
+    color: #ffffff;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: 'Roboto';
+    font-size: 16px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signInBtn:hover {
+
+    color: #172941;
+    transform: translateY(-2px);
+    background-color: #ffffff;
+
+}
+
+.registerBtn {
+    padding: 8px 25px;
+    color: #ffffff;
+    background-color: #65AC9F;
+    border: 2px solid #65AC9F;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: 'Roboto';
+    font-size: 16px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.registerBtn:hover {
+    background-color: transparent;
+    color: #65AC9F;
+    border-color: #65AC9F;
+    transform: translateY(-2px);
+
+}
+
+.loginButtons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto
+}
+
+
+
+.howItWorksSection {
+    background-color: #ecf0f1;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.howItWorksContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.sectionTitle {
+    font-size: 42px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-family: 'Roboto';
+}
+
+.sectionSubtitle {
+    font-size: 20px;
+    color: #7f8c8d;
+    margin-bottom: 60px;
+    font-family: 'Roboto';
+    font-weight: 300;
+}
+
+.stepsContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    margin-top: 40px;
+}
+
+.step {
+    text-align: center;
+}
+
+.stepIcon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    color: white;
+    font-weight: bold;
+}
+
+.step:nth-child(1) .stepIcon {
+    background-color: #a8d5d1;
+}
+
+.step:nth-child(2) .stepIcon {
+    background-color: #8bc34a;
+}
+
+.step:nth-child(3) .stepIcon {
+    background-color: #4caf50;
+}
+
+.stepTitle {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-family: 'Roboto';
+}
+
+.stepDescription {
+    font-size: 16px;
+    color: #7f8c8d;
+    line-height: 1.6;
+    font-family: 'Roboto';
+}
+
+
+.highlightsSection {
+    background-color: #2C3E50;
+    padding: 60px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.highlightsHeader {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+.highlightsTitle {
+    font-size: 42px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.highlightsSubtitle {
+    font-size: 18px;
+    color: #bdc3c7;
+    font-weight: 300;
+}
+
+.highlightsContainer {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.highlightsTrack {
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    height: 100%;
+    transition: transform 0.3s ease;
+    animation: autoScroll 20s linear infinite;
+}
+
+.highlightCard {
+    flex-shrink: 0;
+    width: 350px;
+    height: 250px;
+    background: linear-gradient(135deg, #65AC9F, #4a9085);
+    border-radius: 15px;
+    padding: 30px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.highlightCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.highlightCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: translate(30px, -30px);
+}
+
+.highlightIcon {
+    font-size: 48px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.highlightTitle {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.highlightDescription {
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.scrollControls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    z-index: 2;
+}
+
+.scrollControls:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.scrollLeft {
+    left: 20px;
+}
+
+.scrollRight {
+    right: 20px;
+}
+
+
+.highlightsContainer:hover .highlightsTrack {
+    animation-play-state: paused;
+}
+
+
+
+
+
+
+
+.joinMovementSection {
+    background: linear-gradient(135deg, #2C3E50, #34495e);
+    padding: 100px 0;
+    text-align: center;
+    color: white;
+    font-family: 'Roboto';
+}
+
+.joinMovementTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.joinMovementDescription {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+
+
+.joinMovementButton {
+    display: inline-block;
+    padding: 15px 40px;
+    background: linear-gradient(45deg, #65AC9F, #4a9085);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(101, 172, 159, 0.3);
+}
+
+.joinMovementButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(101, 172, 159, 0.4);
+    background: linear-gradient(45deg, #4a9085, #65AC9F);
+}
+
+.footer {
+    background-color: #1a252f;
+    padding: 60px 0 20px;
+    color: #bdc3c7;
+    font-family: 'Roboto';
+}
+
+.footerContent {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footerSection h3 {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.footerSection p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.footerSection a {
+    color: #bdc3c7;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.footerSection a:hover {
+    color: #65AC9F;
+}
+
+.socialLinks {
+    display: flex;
+    gap: 15px;
+}
+
+.socialLink {
+    width: 40px;
+    height: 40px;
+    background: rgba(101, 172, 159, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.socialLink:hover {
+    background: #65AC9F;
+    transform: translateY(-3px);
+}
+
+.footerBottom {
+    border-top: 1px solid #34495e;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+}

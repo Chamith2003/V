@@ -1,0 +1,601 @@
+* {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    background-image: url('/V/View/resources/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Main Content */
+.mainContent {
+    padding: 90px 30px;
+    /* background:#ecf0f1; */
+    background: transparent;
+
+    min-height: 100vh;
+
+}
+
+.dashboardHeader {
+    margin-bottom: 30px;
+    /* margin-bottom: 30px;
+    display: flex;
+    align-items: center; */
+}
+
+
+.backButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 35px;
+    background-color: #65AC9F;
+    color: white;
+    border-radius: 8px;
+
+    font-size: 18px;
+    margin-right: 15px;
+    transition: all 0.3s ease;
+    line-height: 1;
+    padding: 0;
+
+
+
+
+
+
+}
+
+.backButton:hover {
+    background-color: #4d8a7f;
+}
+
+
+.dashboardTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-family: 'Roboto';
+    text-align: center;
+}
+
+.dashboardSubtitle {
+    font-size: 1.1rem;
+    color: #ffffff;
+    font-weight: 300;
+    font-family: 'Roboto';
+    text-align: center;
+
+}
+
+.dashboardLayout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Event Tasks Section */
+.tasksSection {
+    background: linear-gradient(135deg, #2C3E50, #34495e);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #ecf0f1;
+}
+
+.taskSubtitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    font-family: 'Roboto';
+}
+
+
+.createTaskBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #65AC9F, #4a9085);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-family: 'Roboto';
+}
+
+.createTaskBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(101, 172, 159, 0.3);
+}
+
+/* Task Cards */
+.taskCard {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+    padding-top: 50px;
+    margin-bottom: 20px;
+    border-left: 4px solid #65AC9F;
+    transition: all 0.3s ease;
+    position: relative;
+    min-height: 140px;
+}
+
+.taskCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.taskCard.pending {
+    border-left-color: #f39c12;
+    background: #fefcf8;
+    font-family: 'Roboto';
+}
+
+.taskCard.completed {
+    border-left-color: #7f8c8d;
+    background: #f9f9f9;
+    font-family: 'Roboto';
+}
+
+.taskStatus {
+    position: absolute;
+    top: 15px;
+    right: 80px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.taskStatus.inprogress {
+    background: rgba(101, 172, 159, 0.1);
+    color: #4a9085;
+    font-family: 'Roboto';
+}
+
+.taskStatus.pending {
+    background: rgba(243, 156, 18, 0.1);
+    color: #e67e22;
+    font-family: 'Roboto';
+}
+
+.taskStatus.completed {
+    background: rgba(149, 165, 166, 0.1);
+    color: #7f8c8d;
+    font-family: 'Roboto';
+}
+
+.taskTitle {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    font-family: 'Roboto';
+}
+
+.taskDescription {
+    color: #7f8c8d;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    font-family: 'Roboto';
+}
+
+.taskMeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.taskRequired {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    font-family: 'Roboto';
+}
+
+.taskAssigned {
+    font-size: 0.85rem;
+    color: #27ae60;
+    font-weight: 600;
+    font-family: 'Roboto';
+}
+
+/* Assigned Volunteers */
+.assignedVolunteers {
+    min-height: 60px;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    border: 2px dashed #bdc3c7;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+/*JS Code*/
+.assignedVolunteers.droppable {
+    border-color: #65AC9F !important;
+    background-color: rgba(101, 172, 159, 0.1) !important;
+    border-style: solid;
+}
+
+.volunteerChip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #65AC9F, #4a9085);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    position: relative;
+    font-family: 'Roboto';
+    animation: fadeInUp 0.3s ease;
+}
+
+.volunteerAvatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.removeVolunteer {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 5px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    font-family: 'Roboto';
+    transition: opacity 0.3s ease;
+}
+
+.removeVolunteer:hover {
+    opacity: 1;
+}
+
+.dropZoneText {
+    color: #bdc3c7;
+    font-style: italic;
+    font-size: 0.9rem;
+    text-align: center;
+    width: 100%;
+    font-family: 'Roboto';
+}
+
+/* Unassigned Volunteers Section */
+.volunteersSection {
+    background: linear-gradient(135deg, #2C3E50, #34495e);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    height: fit-content;
+}
+
+.unassignedSubtitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    font-family: 'Roboto';
+}
+
+.volunteersList {
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-bottom: 20px;
+}
+
+.volunteerItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    margin-bottom: 8px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    cursor: grab;
+    transition: all 0.3s ease;
+    user-select: none;
+    border: 2px solid transparent;
+}
+
+.volunteerItem:hover {
+    background: rgba(101, 172, 159, 0.9);
+}
+
+.volunteerItem.selected {
+    background: rgba(101, 172, 159, 0.2);
+    border: 2px solid #65AC9F;
+}
+
+.volunteerItem.dragging {
+    opacity: 0.5;
+    /* transform: rotate(2deg); */
+    cursor: grabbing;
+}
+
+.volunteerItem:active {
+    cursor: grabbing;
+}
+
+.volunteerCheckbox {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #bdc3c7;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.volunteerCheckbox.checked {
+    background: linear-gradient(135deg, #65AC9F, #4a9085);
+    border-color: #4a9085;
+}
+
+/*JS Code*/
+.volunteerCheckbox.checked::after {
+    content: '✓';
+    position: absolute;
+    top: -2px;
+    left: 1px;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 700;
+    font-family: 'Roboto';
+}
+
+.volunteerItemAvatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #65AC9F, #4a9085);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-family: 'Roboto';
+    font-size: 0.9rem;
+}
+
+.volunteerInfo {
+    flex: 1;
+}
+
+.volunteerName {
+    font-weight: 600;
+    color: #2c3e50;
+    font-family: 'Roboto';
+    font-size: 0.95rem;
+}
+
+.volunteerId {
+    color: #2c3e50;
+    font-size: 0.8rem;
+    font-family: 'Roboto';
+}
+
+.assignSelectedBtn {
+    width: 100%;
+    background: linear-gradient(135deg, #65AC9F, #4a9085);
+    color: white;
+    font-family: 'Roboto';
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* disabled: false; */
+}
+
+/*JS Code*/
+.assignSelectedBtn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(101, 172, 159, 0.3);
+}
+
+.assignSelectedBtn:disabled {
+    background: #bdc3c7;
+    cursor: not-allowed;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-family: 'Roboto';
+}
+
+.modalContent {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 0;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modalContentassign {
+    background-color: #fefefe;
+    margin: 5% auto;
+    margin-top: 15%;
+    padding: 0;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modalContentalert {
+    background-color: #fefefe;
+    margin: 5% auto;
+    margin-top: 15%;
+    padding: 0;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.modalHeader {
+    padding: 20px;
+    background: linear-gradient(135deg, #2C3E50, #34495e);
+    color: white;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modalClose {
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.modalClose:hover {
+    opacity: 1;
+}
+
+.formGroup {
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.formGroup input,
+.formGroup textarea,
+.formGroup select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus,
+.formGroup select:focus {
+    outline: none;
+    border-color: #65AC9F;
+}
+
+.formActions {
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.cancelBtn,
+.submitBtn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.cancelBtn {
+    background-color: #bdc3c7;
+    color: white;
+}
+
+.submitBtn {
+    background: linear-gradient(135deg, #65AC9F, #4a9085);
+    color: white;
+}
+
+.taskActions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+
+}
+
+.taskActionBtn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+
+}
+
+.taskActionBtn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.noTasks,
+.noVolunteers {
+    text-align: center;
+    color: #7f8c8d;
+    /* font-style: italic; */
+    padding: 20px;
+    font-family: 'Roboto';
+}

@@ -1,0 +1,528 @@
+* {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    /* background: #ecf0f1; */
+    min-height: 100vh;
+    background-image: url('/V/View/resources/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Header Section */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #65AC9F, #4a9085);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 36px;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(101, 172, 159, 0.3);
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+/* Main Content Container */
+.mainContent {
+    padding: 90px 30px;
+    /* background: #ecf0f1; */
+                 background-color: transparent;
+
+}
+
+/* Payment Gateway Container */
+.payment-gateway-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.payment-gateway-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    /* border: 1px solid #e1e8ed; */
+}
+
+/* Gateway Header */
+.gateway-header {
+    background: linear-gradient(135deg, #2C3E50, #34495e);
+    padding: 25px 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+}
+
+.gateway-icon {
+    font-size: 1.8rem;
+    color: #65AC9F;
+}
+
+.gateway-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: white;
+}
+
+/* Payment Form Grid */
+.payment-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 40px;
+}
+
+.form-column h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ecf0f1;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #2c3e50;
+    font-size: 0.9rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #ecf0f1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.3s ease;
+    background: #fafbfc;
+    color: #2c3e50;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #65AC9F;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(101, 172, 159, 0.1);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #65AC9F;
+}
+
+select.form-control {
+    cursor: pointer;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 0.8rem;
+    margin-top: 4px;
+    display: none;
+}
+
+.form-group.error .form-control {
+    border-color: #e74c3c;
+}
+
+.form-group.error .error-message {
+    display: block;
+}
+
+.required {
+    color: #e74c3c;
+}
+
+.form-control::placeholder {
+    color: #bdc3c7;
+}
+
+/* Form Row for side-by-side inputs */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* Currency Input */
+.currency-input {
+    position: relative;
+}
+
+.currency-input input {
+    padding-left: 50px;
+}
+
+.currency-input::before {
+    content: 'LKR';
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #7f8c8d;
+    font-weight: 500;
+    font-size: 0.9rem;
+    z-index: 1;
+}
+
+
+/* Donation Amount Options */
+.amount-options {
+    margin-top: 10px;
+}
+
+.preset-amounts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.amount-btn {
+    padding: 12px 16px;
+    border: 2px solid #e0e0e0;
+    background: #f8f9fa;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    margin-bottom: 14px;
+}
+
+.amount-btn:hover {
+    border-color: #65AC9F;
+    background: #e7f3ff;
+    transform: translateY(-1px);
+}
+
+.amount-btn.active {
+    border-color: #65AC9F;
+    background: #65AC9F;
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(101, 172, 159, 0.3);
+}
+
+/* Payment Methods */
+.payment-methods {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.payment-method-card {
+    flex: 1 1 100px;
+    max-width: 150px;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: #fafbfc;
+    margin: 15px 0;
+}
+
+.payment-method-card img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
+
+/* Process Payment Button */
+.btn-process-payment {
+    width: 100%;
+    padding: 16px 0;
+    background: linear-gradient(135deg, #65AC9F, #4a9085);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 40px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn-process-payment:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(101, 172, 159, 0.3);
+    background: linear-gradient(135deg, #5a9b8e, #427a6f);
+}
+
+.btn-process-payment:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+    background: #95a5a6;
+}
+
+/* Security Footer */
+.security-footer {
+    max-width: 800px;
+    margin: 30px auto 0;
+    text-align: center;
+}
+
+.security-badges {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.security-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background: rgba(90, 130, 122, 0.15);
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(101, 172, 159, 0.5);
+}
+
+.badge-icon {
+    font-size: 2rem;
+    color: #65AC9F;
+    margin-bottom: 8px;
+}
+
+.badge-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #d6d6d6;
+}
+
+.security-disclaimer {
+    font-size: 0.9rem;
+    color: #ffffff;
+    line-height: 1.5;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Card Input Specific Styling */
+#card_number {
+    font-family: 'Courier New', monospace;
+    letter-spacing: 1px;
+}
+
+#expiry, #cvv {
+    font-family: 'Courier New', monospace;
+}
+
+/* Focus Accessibility */
+.form-control:focus-visible {
+    outline: 2px solid #65AC9F;
+    outline-offset: 2px;
+}
+
+.btn-process-payment:focus-visible {
+    outline: 2px solid #65AC9F;
+    outline-offset: 2px;
+}
+
+.payment-method-card:focus-visible,
+.amount-btn:focus-visible {
+    outline: 2px solid #65AC9F;
+    outline-offset: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .payment-form-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 25px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .preset-amounts {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .payment-methods {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .payment-method-card {
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 12px 15px;
+    }
+    
+    .payment-method-card img {
+        margin-bottom: 0;
+        margin-right: 10px;
+    }
+    
+    .gateway-header {
+        padding: 20px 25px;
+    }
+    
+    .gateway-header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .security-badges {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .progress-container {
+        gap: 0;
+    }
+    
+    .progress-line {
+        width: 50px;
+    }
+    
+    .step-circle {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .step-label {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .payment-gateway-container {
+        padding: 0;
+        margin: 0 -15px;
+    }
+    
+    .payment-gateway-card {
+        border-radius: 15px;
+        margin: 0 15px;
+    }
+    
+    .payment-form-grid {
+        padding: 20px;
+    }
+    
+    .form-column h3 {
+        font-size: 1.1rem;
+    }
+    
+    .gateway-header {
+        padding: 15px 20px;
+    }
+    
+    .gateway-icon {
+        font-size: 1.5rem;
+    }
+    
+    .gateway-header h2 {
+        font-size: 1.2rem;
+    }
+    
+    .preset-amounts {
+        grid-template-columns: 1fr;
+    }
+    
+    .payment-method-card {
+        padding: 10px 12px;
+    }
+    
+    .payment-method-card img {
+        width: 30px;
+        height: 20px;
+    }
+    
+    .btn-process-payment {
+        font-size: 1rem;
+        padding: 14px 0;
+    }
+    
+    .security-badges {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .security-badge {
+        width: 100%;
+        max-width: 200px;
+        text-align: center;
+    }
+    
+    .payment-progress {
+        margin: 0 -15px 30px;
+        border-radius: 10px;
+        padding: 25px 15px;
+    }
+    
+    .progress-line {
+        width: 30px;
+    }
+    
+    .step-circle {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    
+    .step-label {
+        font-size: 0.75rem;
+    }
+    
+    .mainContent {
+        padding: 60px 15px;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+}

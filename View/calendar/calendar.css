@@ -1,0 +1,645 @@
+/* View/calendar/calendar.css - Updated Styles */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    background-image: url('/V/View/resources/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.calendarBox {
+    font-family: "Roboto";
+    padding-top: 70px;
+    box-sizing: border-box;
+    min-height: 100vh;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+/* .calendarBox img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+} */
+
+.calendarContainer {
+    font-family: "Roboto";
+    padding-top: 20px;
+    padding-bottom: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    z-index: 1;
+}
+
+.calendarSidebar {
+    min-width: 350px;
+    max-width: 350px;
+    padding: 20px;
+    margin-left: 0;
+    margin-right: 0;
+    flex-shrink: 0;
+    background-color: rgba(44, 62, 80, 0.9);
+    z-index: 1;
+    height: calc(100vh - 70px);
+    position: sticky;
+    top: 70px;
+    align-self: flex-start;
+    scrollbar-width: none;
+    /* max-height: calc(100vh - 70px); */
+    overflow-y: auto;
+}
+
+.sidebarElement {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #D9D9D9;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.subTexts {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* Calendar Filters */
+.calendarFilters {
+    padding: 15px 1%;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    margin: 0 3% 20px 3%;
+    font-family: "Roboto";
+}
+    
+
+.radioGroup {          /* wrapper around radio buttons */
+  flex: 0 0 auto;      /* take only needed width */
+}
+
+.eventFilter,
+.calNavButton {
+  flex: 1 1 0;         /* share remaining space */
+}
+
+.calendarFilters label {
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.calendarFilters select {
+    padding: 8px 12px;
+    border-radius: 7px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    cursor: pointer;
+    font-family: "Roboto";
+}
+
+.calendarFilters select option {
+    background-color: #2C3E50;
+    color: white;
+    border-radius: 5px;
+    font-family: "Roboto";
+}
+
+/* Calendar Header */
+.calendarHeader {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 3%;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    height: 20px;
+    gap: 15px;
+    color: white;
+}
+
+.calendarHeaderCard {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    height: 20px;
+    max-width: 144.37px;
+}
+
+/* Calendar Grid */
+.calendarGrid {
+    padding-top: 3%;
+    padding-left: 3%;
+    padding-right: 3%;
+    width: 100%;
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    place-items: center;
+}
+
+.calendarCard {
+    min-height: 120px;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.calendarCard:hover {
+    background-color: #BDC3C7;
+    /* transform: translateY(-2px); */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.calendarCard.today {
+    background-color: #65AC9F;
+    color: white;
+    font-weight: bold;
+}
+
+.calendarCard.selected {
+    background-color: #A1C3B1;
+    color: white;
+    box-shadow: 0 0 0 3px rgba(161, 195, 177, 0.5);
+}
+
+.calendarCard.otherMonth {
+    background-color: #ECF0F1;
+    color: #BDC3C7;
+    opacity: 0.6;
+}
+
+/* Event Indicators */
+.eventDotContainer {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    display: flex;
+    gap: 3px;
+}
+
+.eventDot {
+    width: 8px;
+    height: 8px;
+    background-color: #3498DB;
+    border-radius: 50%;
+    transition: transform 0.2s;
+}
+
+.eventDot:hover {
+    transform: scale(1.3);
+}
+
+
+
+/* Event List on Card */
+.eventList {
+    font-size: 11px;
+    margin-top: 20px;
+    max-height: 70px;
+    overflow-y: auto;
+}
+
+.eventItem {
+    /* background-color: rgba(52, 152, 219, 0.2); */
+    padding: 3px 5px;
+    margin: 2px 0;
+    /* border-radius: 3px; */
+    font-size: 12px;
+    border-left: 3px solid #3498DB;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+.eventItem.moreEvents {
+    text-align: left;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Calendar Navigation */
+.calendarNavigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 3%;
+    color: white;
+}
+
+.calNavButton {
+    background-color: rgba(52, 152, 219, 0.8);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    width:287px;
+}
+
+.calNavButton:hover {
+    background-color: #3498DB;
+}
+
+.monthYear {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+
+/* Upcoming Events */
+.upcomingEventItem {
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.upcomingEventItem:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+
+.upcomingEventItem img{
+    width: 16px;
+    height: 16px;
+    position: static;
+    vertical-align: middle;
+}
+
+/*annual events*/
+
+.registeredannualEventItem {
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.registeredannualEventItem:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.unregisteredannualEventItem {
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: background-color 0.2s;
+    opacity: 0.55;
+}
+
+.unregisteredannualEventItem:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+
+/* Modal Styles */
+ .calendarOverlay {
+    position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+}
+
+
+       
+
+.calendarModal {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: slideIn 0.3s ease;
+            scrollbar-width: none;
+        }
+
+.calendarModalBody {
+            padding: 32px;
+        }
+
+.calendarModalHeader {
+            background: linear-gradient(135deg, rgb(101, 172, 159), rgb(74, 144, 133));
+            color: white;
+            padding: 24px;
+            border-radius: 16px 16px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }   
+        
+/* .calendarModalHeaderh2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        } */
+        
+
+.closeBtn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+.closeBtn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+
+.messageokbtn {
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    font-weight: bold;
+}
+.messageokbtn:hover {
+    background-color: #445e78;
+}
+
+
+
+/* Day Events Modal */
+.dayEventsList {
+    margin-top: 20px;
+}
+
+.dayEventItem {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    margin: 10px 0;
+    /* border-radius: 8px; */
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+ .dayEventItem:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px);
+} 
+
+.eventItemTitle {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+
+.eventItemType {
+    color: #b1b4b6;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.eventItemTime {
+    color: #3498DB;
+    font-size: 13px;
+     display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.eventItemTime img{
+   width: 14px;
+    height: 14px;
+    position: static;
+    vertical-align: middle;
+}
+
+
+/* Event Details */
+.eventDetailsList {
+    /* margin-top: 20px; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+}
+
+.eventDetailItem {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.eventDetailItem.fullWidth {
+    grid-column: 1 / -1;
+}
+
+.eventDetailItem strong {
+    color: #3498DB;
+}
+
+/* Leave Event Section */
+.leaveEventSection {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: rgba(231, 76, 60, 0.2);
+    border-radius: 10px;
+    border: 2px solid #E74C3C;
+}
+
+.warningText {
+    color: #E74C3C;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.leaveEventSection ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.leaveEventBtn {
+    background-color: #E74C3C;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.leaveEventBtn:hover {
+    background-color: #C0392B;
+}
+.confirmleaveEventBtn {
+    background-color: #E74C3C;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    width: 49.5%;
+    transition: background-color 0.3s;
+    align-items: center;
+}
+
+.confirmleaveEventBtn:hover {
+    background-color: #C0392B;
+}
+.returnleaveBtn {
+    background-color: #c8bbba;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    width: 49.5%;
+    transition: background-color 0.3s;
+    align-items: center;
+}
+
+.returnleaveBtn:hover {
+    background-color: #686261;
+}
+
+
+.infoSection {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(52, 152, 219, 0.2);
+    border-radius: 8px;
+    border-left: 4px solid #3498DB;
+}
+
+
+/* Quick Actions Links */
+.sidebarElement a {
+    color: #3498DB;
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+}
+
+.sidebarElement a:hover {
+    color: #5DADE2;
+    text-decoration: underline;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .calendarBox {
+        flex-direction: column;
+    }
+
+    .calendarSidebar {
+        max-height: none;
+    }
+
+    .eventDetailsList {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .calendarGrid {
+        gap: 2px;
+    }
+
+    .calendarCard {
+        min-height: 80px;
+    }
+
+    .eventList {
+        display: none;
+    }
+
+    .calendar-modal {
+        width: 95%;
+        padding: 20px;
+    }
+}
+
+
+
+
+
+
+
+        
+
+       
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Header */
+        
+
+        
+        
+
+        

@@ -1,0 +1,141 @@
+ body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background:url('bg.png') no-repeat center center/cover;
+        }
+
+        .modal-card {
+            background-color: #ffffff;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .modal-header h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0;
+            color: #333333;
+        }
+
+        /* The close button is removed for a standalone page as it's not a modal */
+        /* .modal-close-btn {
+            background: none;
+            border: none;
+            color: #333333;
+            font-size: 1.5rem;
+            cursor: pointer;
+            line-height: 1;
+        } */
+
+        .password-criteria {
+            background: #c1d0e4;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: #333333;
+            margin-top: 1rem;
+        }
+        
+        .password-criteria svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            vertical-align: middle;
+            margin-right: 0.5rem;
+            fill: #3570d0;
+        }
+
+        .success-message, .error-message {
+            display: none;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 500;
+            animation: fadeIn 0.3s ease;
+        }
+        .success-message {
+            background: rgba(100, 255, 100, 0.15);
+            color: #4fbf92;
+        }
+        .error-message {
+            background: rgba(255, 100, 100, 0.15);
+            color: #ff6347;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .form-field {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        input[type="password"] {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 0.5rem;
+            box-sizing: border-box;
+        }
+
+        .form-actions2 {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            font-weight: 600;
+            border: none;
+        }
+
+        .btn-save {
+            background-color: #172941;
+            color: #ffffff;
+        }
+
+        .btn-save:hover{
+             background-color: #415f86ff;
+        }
+        .btn-cancel {
+            background-color: #dfe1e5ff;
+            color: #333333;
+        }
+
+        .btn-cancel:hover {
+            background-color: #d7e0ecff;
+            color: #333333;
+        }
+
+.password-criteria img {
+    /* Ensure the icon doesn't take up excessive space */
+    flex-shrink: 0;
+    /* Optional: Set a specific size for the icon if needed */
+    width: 12px;
+    height: 12px;
+}
